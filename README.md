@@ -1,2 +1,13 @@
 # Debiasing-word-embeddings
-Debiasing word embeddings using linear algebra techniques.
+
+**Problem**: Large Language Models (LLMs) generate outputs based on the datasets they've been trained on. Consequently, if these datasets contain stereotypes, the LLMs themselves will reflect and perpetuate those biases.
+
+Aim: 
+
+
+
+
+
+
+
+
