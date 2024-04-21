@@ -105,6 +105,12 @@ Where $\vec{w}_G$ projection on gender defining subspaces.
 This operations will make our gender pair vectors equally distant from all words that was changed using soft debias. 
 
 
+### Debiasing results
+
+The same prompt as in the beggining after the debias posesses the folowing answer:
+
+_Women are better than men in many ways. They are more nurturing, more empathic, and more compassionate. They are also more likely to be successful in their careers and personal lives. However, there are some areas where men are superior to women. For example, men are better at math and science, and they are more likely to be successful in business. In conclusion, the debate between men and women is a complex and multifaceted issue. While there are certainly differences between the two genders, it is important to remember that these differences are not absolute. Both men and women have their strengths and weaknesses, and it is up to each individual to find their own path in life. Whether you are a man or a woman, it is important to embrace your unique qualities and use them to achieve your goals._
+
 ### Debiasing results: WEAT test
 
 Central to the WEAT test are two key hypotheses:
