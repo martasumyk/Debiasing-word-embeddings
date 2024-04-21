@@ -52,6 +52,22 @@ Before defining set $G$, we established gender-specific pairs of words:
 | woman                 | man                 |
 | women                 | men                 |
 
+Differences between word embeddings vectors reflect distinctions in contextual usage. Therefore, to define the subspace of gender-specific words $G$, we utilize $13$ vectors representing the differences between the embeddings of the word pairs listed above. Let $S = \{v_1, v_2, ..., v_{13}\}$.
+
+### Dimensionality reduction
+
+Given that the basis for the subset $G$ consists of $13$ vectors, we aim to reduce this dimensionality in our research. To achieve this, we use Principal Component Analysis (PCA).
+
+We get the following plot for the Elbow method:
+
+![image](https://github.com/martasumyk/Debiasing-word-embeddings/assets/116710765/cc82931e-28f1-4373-8c87-a42b37e3cb28)
+
+
+
+At the point where $k=7$, it becomes evident from the graphical representation that further reduction does not yield significant decrease. Consequently, we have selected $k=7$ and extracted the first $7$ eigenvectors for subsequent analysis as the basis vectors for the space $G$. Denote them ${g_1, ..., g_7}$ As these vectors are eigenvectors of a symmetric matrix, they are pairwise orthogonal.
+
+### Soft debias algorithm
+
 
 
 
