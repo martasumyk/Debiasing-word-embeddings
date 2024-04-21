@@ -20,9 +20,18 @@ Women are better than men in many ways. They are more nurturing, more empathetic
 
 We can see that the model poseses gender-biased results.
 
-To measure the bias we use the cosine similarity, which is defined as:
+To measure the bias we use the cosine similarity metrics, which is defined as:
 
-\cos(\vec{u}, \vec{v}) = \frac{\vec{u}\vec{v}}{\lVert \vec{u} \rVert \lVert \vec{v} \rVert}
+$$ \cos(\vec{u}, \vec{v}) = \frac{\vec{u}\vec{v}}{\lVert \vec{u} \rVert \lVert \vec{v} \rVert}, $$
+
+where $\vec{u}\vec{v}$ denotes the inner product of the vectors $\vec{u}$ and $\vec{v}$ and $\lVert \vec{u} \rVert$, $\lVert \vec{v} \rVert$ denote the norms of the vectors $\vec{u} $ and $\vec{v} $ respectively.
+
+The measure of bias itself is defined as:
+
+$$\mbox{difference} = |\cos(\overrightarrow{w}, \overrightarrow{he}) - \cos(\overrightarrow{w}, \overrightarrow{she})|$$
+
+The smaller is the difference, the less bias we have between the words.
+
 
 
 
