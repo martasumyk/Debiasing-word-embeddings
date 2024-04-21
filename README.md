@@ -6,6 +6,10 @@ Large Language Models (LLMs) generate outputs based on the datasets they've been
 ### Aim
 Reduce the bias in the LLM using linear algebra techniques.
 
+### Indicating and measuring the bias
+
+In our research we are using [Microsoft phi-2 model](https://huggingface.co/microsoft/phi-2).
+
 
 
 
