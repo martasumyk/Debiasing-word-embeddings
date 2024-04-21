@@ -68,6 +68,28 @@ At the point where $k=7$, it becomes evident from the graphical representation t
 
 ### Soft debias algorithm
 
+To neutralize the bias component of a given word vector $\vec{w}$, we aim to project this vector onto the gender-neutral subspace $N$. Given that $N + G = \mathbb{R}^d$, the spaces $G$ and $N$ are orthogonal. Consequently, every vector $\vec{w} \in \mathbb{R}^d$ can be decomposed as:
+
+$$\vec{w} = \vec{w_{G}} + \vec{w_{N}},$$
+where $\vec{w_{N}}$ represents the projection of $\vec{w}$ onto the affine space $N$, and $\vec{w_{G}}$ signifies the projection onto $G$.
+
+Therefore,
+$$\vec{w_{N}} = \vec{w} - \vec{w_{G}}$$
+
+Given that the basis vectors of $G$ are orthogonal, we can obtain $\vec{w_{G}}$ as the sum of the projections onto these basis vectors:
+
+$$\vec{w_{G}} = \sum_{i=1}^{7}{\vec{w_{g_i}}}$$
+where $\vec{w_{g_i}}$ denotes the projection of $\vec{w}$ onto the basis vector $g_i$.
+The projection matrix onto the linear span of $g_i$ is defined as:
+
+$$P_{g_i} = \frac{g_ig_i^T}{g_i^Tg_i}$$
+So the overall projection is calculated as follows:
+
+$$\vec{w_{G}} = \sum_{i=1}^{7}{P_{g_i}\vec w} = \sum_{i=1}^{7}{\frac{g_ig_i^T}{g_i^Tg_i} \vec w}$$
+Therefore, the debiased vector looks as follows:
+
+$$\vec{w_{N}} = \vec{w} - \sum_{i=1}^{7}{P_{g_i}\vec w} = \vec{w} - \sum_{i=1}^{7}{\frac{g_ig_i^T}{g_i^Tg_i}\vec w}$$
+
 
 
 
