@@ -122,5 +122,25 @@ We got the following results:
 
 - `Hard debiasing`: With a $p$-value of $1$, we fail to reject the null hypothesis, indicating that there is no difference between the two sets of target words in terms of their relative associations with the attribute sets.
 
+  ### Soft debiasing results
+
+  ![image](https://github.com/martasumyk/Debiasing-word-embeddings/assets/116710765/d6303891-f04c-46ca-a3a8-7725f920ceef)
+
+
+
+  ### Hard debiasing results
+
+  ![image](https://github.com/martasumyk/Debiasing-word-embeddings/assets/116710765/fdbd7672-5535-42b0-b192-f50f8a030ed4)
+
+
+  ### Words clustering
+
+  Despite our efforts, biased words still tend to cluster together, as revealed by K-means clustering analysis on a curated list of words, documented on our GitHub. Prior to debiasing, the algorithm achieved a 51\% accuracy rate in clustering male and female biased words, which slightly dropped to 45.5\% post-debiasing. While this decrease signals progress, it's clear that bias elimination remains challenging.
+
+  ### Conclusions
+
+  The suggested approach demonstrates promising results in metrics such as cosine similarity or Euclidean distance. However, it is important to note that bias can also be inside the model and it is harder to neutralize, as it requires retraining model, that can be costly. 
+
+
 
 
