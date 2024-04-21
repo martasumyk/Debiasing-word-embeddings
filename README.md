@@ -105,8 +105,28 @@ Where $\vec{w}_G$ projection on gender defining subspaces.
 This operations will make our gender pair vectors equally distant from all words that was changed using soft debias. 
 
 
+### Debiasing results: WEAT test
 
+Central to the WEAT test are two key hypotheses:
 
+Null Hypothesis ($H_0$): There exists no significant difference between the two sets of target words concerning their relative associations with the sets of attribute words.
+
+Alternative Hypothesis ($H_1$): There exists a difference between the two sets of target words.
+
+The test statistic is computed by normalizing the mean difference between the associations of the target sets with the attribute sets. This statistic provides a quantified measure of the separation between the distributions of associations.
+
+$$ \frac{\mbox{mean}_{x \in X}s(x, A, B) - \mbox{mean}_{y \in Y}s(y, A, B)}{\sigma_{w \in X \cup Y}s(w, A, B)}$$
+
+Let ${(X_i, Y_i)}$ represent all possible partitions of $X\cup Y$ into two sets of equal size. The $p$-value for the one-sided permutation test is derived from the probability that the statistic computed for the partitions exceeds the statistic for the original sets ($s(X, Y, A, B)$).
+$$P_i{s(X_i, Y_i, A, B) > s(X, Y, A, B)}$$
+
+We got the following results:
+
+- `Without debiasing`: The obtained $p$-value of $0.023$ leads to the rejection of the null hypothesis. Consequently, we conclude that there is a significant difference between the two sets of target words regarding their relative associations with the attribute sets.
+
+- `Soft debiasing`: The $p$-value of $0.24$ does not provide sufficient evidence to reject the null hypothesis. Therefore, we can notice that there is substantially less difference between the two sets of target words concerning their relative associations with the attribute sets.
+
+- `Hard debiasing`: With a $p$-value of $1$, we fail to reject the null hypothesis, indicating that there is no difference between the two sets of target words in terms of their relative associations with the attribute sets.
 
 
 
