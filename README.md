@@ -91,6 +91,18 @@ Therefore, the debiased vector looks as follows:
 $$\vec{w_{N}} = \vec{w} - \sum_{i=1}^{7}{P_{g_i}\vec w} = \vec{w} - \sum_{i=1}^{7}{\frac{g_ig_i^T}{g_i^Tg_i}\vec w}$$
 
 
+### Hard debias algorithm
+
+After soft debiasing a vector $\vec{w}$, we have a projection of this vector onto the gender-neutral subspace $N$. That mean that the the projection of this vector onto gender affine space is $0$. We have removed bias from word itself, but there is one more step to make it better. Our gender defining words not necessarily are equally distant. In order to make that a case, we use equalization that will make our gender defining words equally distant to all words $\vec{w_{N}}$. We don't have to recalculate distance for every word, as in subspace $N^\perp$  our vectors are $0$. 
+$$\mu := \frac{\sum_{w \in E} W}{E}$$
+Where $\mu$ is average of the set $E$.
+In this formula we take average of every equalization set (in our case pair).
+$$\nu := \mu - \mu_G $$
+Where $\mu_G$ is projection of $\mu$ onto gender defining subspace.
+Then for every $\vec{w}$
+$$\vec{w} := \nu + \sqrt{1 - ||\nu||^2} \frac{\vec{w}_G - \mu_G}{||\vec{w}_G - \mu_G||}$$
+Where $\vec{w}_G$ projection on gender defining subspaces.
+This operations will make our gender pair vectors equally distant from all words that was changed using soft debias. 
 
 
 
