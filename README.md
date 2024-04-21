@@ -23,13 +23,34 @@ To measure the bias we use the cosine similarity metrics, which is defined as:
 
 $$ \cos(\vec{u}, \vec{v}) = \frac{\vec{u}\vec{v}}{\lVert \vec{u} \rVert \lVert \vec{v} \rVert}, $$
 
-where $\vec{u}\vec{v}$ denotes the inner product of the vectors $\vec{u}$ and $\vec{v}$ and $\lVert \vec{u} \rVert$, $\lVert \vec{v} \rVert$ denote the norms of the vectors $\vec{u} $ and $\vec{v} $ respectively.
+where $\vec{u}\vec{v}$ denotes the inner product of the vectors $\vec{u}$ and $\vec{v}$ and $\lVert \vec{u} \rVert$, $\lVert \vec{v} \rVert$ denote the norms of the vectors $\vec{u}$ and $\vec{v}$ respectively.
 
 The measure of bias itself is defined as:
 
 $$\mbox{difference} = |\cos(\overrightarrow{w}, \overrightarrow{he}) - \cos(\overrightarrow{w}, \overrightarrow{she})|$$
 
 The smaller is the difference, the less bias we have between the words.
+
+### Defining gender-neutral and gender-specific subspaces
+
+Firstly, we define the subset of word vectors intended to be gender-neutral (like $\overrightarrow{business}$ or $\overrightarrow{sport}$) by $N \subset \mathbb{R}^d $ and the gender-defining words  vectors subset (e.g. $\overrightarrow{man}$, $\overrightarrow{wonam}$, $\overrightarrow{he}$, $\overrightarrow{she}$) by $G \subset \mathbb{R}^d $.
+Before defining set $G$, we established gender-specific pairs of words:
+
+| Female-defining words | Male-defining words |
+|-----------------------|---------------------|
+| aunt                  | uncle               |
+| daughter              | son                 |
+| female                | male                |
+| girl                  | boy                 |
+| her                   | his                 |
+| lass                  | lad                 |
+| miss                  | mr                  |
+| mom                   | dad                 |
+| mother                | father              |
+| she                   | he                  |
+| wife                  | husband             |
+| woman                 | man                 |
+| women                 | men                 |
 
 
 
