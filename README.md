@@ -113,12 +113,6 @@ Null Hypothesis ($H_0$): There exists no significant difference between the two 
 
 Alternative Hypothesis ($H_1$): There exists a difference between the two sets of target words.
 
-The test statistic is computed by normalizing the mean difference between the associations of the target sets with the attribute sets. This statistic provides a quantified measure of the separation between the distributions of associations.
-
-$$ \frac{\mbox{mean}_{x \in X}s(x, A, B) - \mbox{mean}_{y \in Y}s(y, A, B)}{\sigma_{w \in X \cup Y}s(w, A, B)}$$
-
-Let ${(X_i, Y_i)}$ represent all possible partitions of $X\cup Y$ into two sets of equal size. The $p$-value for the one-sided permutation test is derived from the probability that the statistic computed for the partitions exceeds the statistic for the original sets ($s(X, Y, A, B)$).
-$$P_i{s(X_i, Y_i, A, B) > s(X, Y, A, B)}$$
 
 We got the following results:
 
